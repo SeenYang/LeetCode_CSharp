@@ -1,3 +1,5 @@
 .idea/
 LeetCode_CSharp/bin/
 LeetCode_CSharp/obj/
+
+.DS_Store
