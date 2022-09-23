@@ -1,4 +1,4 @@
 ﻿using LeetCode.CSharp;
 
-var run = new CanMakeArithmeticProgressionFromSequence();
+var run = new ReserveLinkList();
 run.Test();
