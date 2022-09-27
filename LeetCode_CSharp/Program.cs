@@ -1,4 +1,4 @@
 ﻿using LeetCode.CSharp;
 
-var run = new ReserveLinkList();
+var run = new FindTheDifferenceC();
 run.Test();
