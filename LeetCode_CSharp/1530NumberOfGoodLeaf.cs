@@ -36,7 +36,7 @@ public class NumberOfGoodLeaf
         // This is leaf node.
         // If this is leaf node, it's distance 1 to above root.
         if (root.left == null && root.right == null)
-            return new List<int> { 1 };
+            return new List<int> {1};
 
         // below is getting distances from leaves to current node.
         var leftDisList = GetDistances(root.left, disctance);
