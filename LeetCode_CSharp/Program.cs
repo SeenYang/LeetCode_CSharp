@@ -1,4 +1,4 @@
 ﻿using LeetCode.CSharp;
 
-var run = new CombinationSumII();
+var run = new NumberOfWaysToSplitAString();
 run.Test();
