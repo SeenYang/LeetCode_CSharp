@@ -24,16 +24,23 @@ public class LargestValuesFromLabels {
     /// <returns></returns>
     public int LargestValsFromLabels(int[] values, int[] labels, int numWanted, int useLimit)
     {
-        var list = new List<LabelValue>();
-        foreach (var value in values)
-        {
-            list.Add(new LabelValue
-            {
-                
-            });
+        LabelValue[] elements = new LabelValue[values.Length];
+        for (int i = 0; i < values.Length; i++) elements[i] = new LabelValue { Value = values[i], Label = labels[i] };
+        
+        elements = elements.OrderByDescending(x => x.Value).ToArray();
+        
+        Dictionary<int, int> d = new Dictionary<int, int>();
+        int sum = 0, used = 0;
+        for (int i = 0; used < numWanted && i < elements.Length; i++) {
+            d.TryGetValue(elements[i].Label, out int usedLabelElements);
+            if (usedLabelElements < useLimit) {
+                sum += elements[i].Value;
+                used++;
+                d[elements[i].Label] = usedLabelElements + 1;
+            }
         }
         
-        return 0;
+        return sum;
     }
 
     private class LabelValue

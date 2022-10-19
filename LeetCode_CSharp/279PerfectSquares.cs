@@ -12,22 +12,19 @@ public class PerfectSquares
 
     public int NumSquares(int n)
     {
-        #region Recursive Solution.
-
         // Get a list of squares of number that i^2 <= n
-        // for (var i = 1; i < Math.Sqrt(n); i++)
-        // {
-        //     _squares.Add(i * i);
-        // }
-        //
+        for (var i = 1; i < Math.Sqrt(n); i++)
+        {
+            _squares.Add(i * i);
+        }
+        
+        #region Recursive Solution.
+        
         // return minNumSquares(n);
 
         #endregion
 
         #region Greedy Enumeration
-
-        for (int i = 1; i * i <= n; i++)
-            _squares.Add(i * i);
 
         var count = 1;
         while (count <= n)
@@ -41,6 +38,23 @@ public class PerfectSquares
         #endregion
     }
 
+    /// <summary>
+    /// The worst case, count = target (divided by 1)
+    /// 5 = 4 + 1 = 2^2 + 1
+    /// 10 = 3^2 + 1
+    /// Consider here's the cases:
+    /// target:             1   2   3   4   5   6   7   8   9   10
+    /// num of perfect sqr: 1   2   3   1   2   3   4   2   1   2
+    ///
+    ///
+    /// The idea of this approach is, we assume we can divided by 1 sqrs, if no, increase 1 and try again.
+    /// The steps would be:
+    /// 1. check whether the remain is some number's sqr.
+    /// 2. if no, set temp target as target - 1 (always be the minimum sqr) and repeat the approach.
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="count"></param>
+    /// <returns></returns>
     private bool IsDevidedBy(int n, int count)
     {
         if (count == 1)

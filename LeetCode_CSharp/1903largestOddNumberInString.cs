@@ -2,10 +2,11 @@ namespace LeetCode.CSharp;
 
 public class LargestOddNumberInString
 {
-    void Test()
+    public void Test()
     {
         Console.WriteLine($"Largest Odd Number is: {LargestOddNumber("52")}");
         Console.WriteLine($"Largest Odd Number is: {LargestOddNumber("7542351161")}");
+        Console.WriteLine($"Largest Odd Number is: {LargestOddNumber("35427")}");
     }
 
     string LargestOddNumber(string num)

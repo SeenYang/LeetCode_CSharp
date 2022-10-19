@@ -1,7 +1,7 @@
 namespace LeetCode.CSharp;
 
 //https://leetcode.com/problems/implement-queue-using-stacks/
-public class ImplementQueuUsingStacks232
+public class ImplementQueueUsingStacks232
 {
     void Test()
     {

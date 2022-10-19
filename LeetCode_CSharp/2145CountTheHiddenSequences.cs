@@ -16,7 +16,7 @@ public class CountTheHiddenSequences
      * start with 0.
      * if upper - lower < max - min --> no possible hidden sequences.
      * if upper - lower == max - min --> there's one hidden sequence.
-     * if upper - lower == max - min + k, we have k + 1 hidden sqeunces.
+     * if upper - lower == max - min + k, we have k + 1 hidden sequences.
      */
     public int NumberOfArrays(int[] differences, int lower, int upper)
     {

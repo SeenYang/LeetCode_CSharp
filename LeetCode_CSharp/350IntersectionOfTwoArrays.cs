@@ -10,13 +10,13 @@ public class IntersectionOfTwoArrays
         // var num2 = new[] { 9, 4, 9, 8, 4 };
         var num1 = new[] { 3, 1, 2 };
         var num2 = new[] { 1, 1 };
-        Console.WriteLine($"result is: [{string.Join(",", InterSect(num1, num2))}]");
+        Console.WriteLine($"result is: [{string.Join(",", Intersect(num1, num2))}]");
     }
 
     // Case1: What if num1 and num2 are sorted?
     // Case2: What if num2 is sorted, and limited memory available?
 
-    public int[] InterSect(int[] num1, int[] num2)
+    public int[] Intersect(int[] num1, int[] num2)
     {
         var res = new List<int>();
         num1 = num1.OrderBy(n => n).ToArray();
@@ -27,6 +27,7 @@ public class IntersectionOfTwoArrays
             return res.ToArray();
 
         var index2 = 0;
+        // Always loop through the shorter array.
         if (num1.Length > num2.Length)
         {
             (num1, num2) = (num2, num1);

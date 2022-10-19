@@ -30,7 +30,7 @@ public class SubsetsII
     private void Helper(int[] nums, List<int> currentSubSet, int currentStart)
     {
         // Add current sub set;
-        _res.Add(new List<int>(currentSubSet));
+         _res.Add(new List<int>(currentSubSet));
 
         for (var i = currentStart; i < nums.Length; i++)
         {
