@@ -1,6 +1,6 @@
 namespace LeetCode.CSharp;
 
-public class IntersectionofMultiArrays
+public class IntersectionOfMultiArrays
 {
     IList<int> Intersection(int[][] nums)
     {

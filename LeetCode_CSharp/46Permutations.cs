@@ -4,8 +4,9 @@ public class Permutations
 {
     public void Test()
     {
-        // var input = new int[] { 1, 2, 3 };
-        var input = new int[] { 1, 1, 2 };
+        var input = new int[] { 1, 2, 3 };
+        // var input = new int[] { 1, 1, 2 };
+        // var input = new int[] { 1, 1, 2, 2 };
         var result = Permute(input);
         foreach (var list in result)
         {

@@ -24,8 +24,8 @@ public class MinimumLimitOfBallsInABag
     /// 1. cap = Capacity = (min + max) / 2.
     /// 2. count = Operation Count = 0.
     /// 3. For each bag that bag[i] > cap, count += bag[i]/cap.
-    /// 4.1 If count <= maxOperations, means there's potential to optimise it. set left = min + 1.
-    /// 4.2 If count > maxOperations, mean the capacity too big. set right = cap.
+    /// 4.1 If count <= maxOperations, means there's potential to optimise it. set right = cap.
+    /// 4.2 If count > maxOperations, mean the capacity too small. set left = cap + 1.
     /// </summary>
     /// <param name="nums"></param>
     /// <param name="maxOperations"></param>

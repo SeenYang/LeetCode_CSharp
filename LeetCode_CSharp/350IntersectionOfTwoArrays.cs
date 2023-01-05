@@ -21,40 +21,25 @@ public class IntersectionOfTwoArrays
         var res = new List<int>();
         num1 = num1.OrderBy(n => n).ToArray();
         num2 = num2.OrderBy(n => n).ToArray();
-
+        
         // Sorted and no overlapping.
         if (num1[^1] < num2[0] || num2[^1] < num1[0])
             return res.ToArray();
-
-        var index2 = 0;
+        
         // Always loop through the shorter array.
         if (num1.Length > num2.Length)
-        {
             (num1, num2) = (num2, num1);
+        
+        var index2 = 0;
+        foreach(var n1 in num1) {
+            for(var i = index2; i < num2.Length; i++){
+                if(num2[i] != n1)
+                    continue;
+                index2 = i + 1;
+                res.Add(n1);
+                break;
+            }
         }
-
-        foreach (var n1 in num1)
-        {
-            var intersect = GetIntersect(n1, index2, num2, out int newIndex2);
-            if (intersect != null)
-                res.Add(intersect.Value);
-
-            index2 = newIndex2;
-        }
-
         return res.ToArray();
-    }
-
-    private int? GetIntersect(int n1, int index2, int[] num2, out int newIndex2)
-    {
-        newIndex2 = index2;
-        for (int i = index2; i < num2.Length; i++)
-        {
-            if (num2[i] != n1) continue;
-            newIndex2 = i + 1;
-            return n1;
-        }
-
-        return null;
     }
 }

@@ -11,7 +11,6 @@ public class CountTheHiddenSequences
         Console.WriteLine($"Result is {NumberOfArrays(diff, lower, upper)}");
     }
 
-
     /**
      * start with 0.
      * if upper - lower < max - min --> no possible hidden sequences.
@@ -30,6 +29,7 @@ public class CountTheHiddenSequences
 
         return (int) Math.Max(0, (upper - lower) - (max - min) + 1);
     }
+    
     #region timeout solution
     // public int NumberOfArrays(int[] differences, int lower, int upper) {
     //     // base cases
