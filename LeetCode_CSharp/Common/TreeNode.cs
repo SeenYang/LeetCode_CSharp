@@ -2,7 +2,7 @@ namespace ConsoleApp1.Common;
 
 public class TreeNode
 {
-    private int val;
+    public int val;
     public TreeNode left;
     public TreeNode right;
 
