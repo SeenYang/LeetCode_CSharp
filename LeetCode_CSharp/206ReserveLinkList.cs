@@ -19,7 +19,7 @@ public class ReserveLinkList
         Console.WriteLine(res.val);
     }
 
-    public ListNode ReverseList(ListNode head)
+    public ListNode? ReverseList(ListNode? head)
     {
         // Base Case
         if (head == null || head.next == null)
@@ -44,7 +44,7 @@ public class ReserveLinkList
     /// <param name="node1"></param>
     /// <param name="node2"></param>
     /// <returns></returns>
-    private void reverse(ListNode node1, ListNode node2)
+    private void reverse(ListNode? node1, ListNode? node2)
     {
         if (node2.next != null)
         {
