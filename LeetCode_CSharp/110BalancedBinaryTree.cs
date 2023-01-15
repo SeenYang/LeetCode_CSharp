@@ -4,22 +4,22 @@ public class BalancedBinaryTree
 {
     void Test()
     {
-        var node41 = new TreeNode { val = 4, left = null, right = null };
-        var node42 = new TreeNode { val = 4, left = null, right = null };
-        var node31 = new TreeNode { val = 3, left = node41, right = node42 };
-        var node32 = new TreeNode { val = 3, left = null, right = null };
-        var node21 = new TreeNode { val = 2, left = node31, right = node32 };
-        var node22 = new TreeNode { val = 2, left = null, right = null };
-        var node1 = new TreeNode { val = 1, left = node21, right = node22 };
+        var node41 = new TreeNode {val = 4, left = null, right = null};
+        var node42 = new TreeNode {val = 4, left = null, right = null};
+        var node31 = new TreeNode {val = 3, left = node41, right = node42};
+        var node32 = new TreeNode {val = 3, left = null, right = null};
+        var node21 = new TreeNode {val = 2, left = node31, right = node32};
+        var node22 = new TreeNode {val = 2, left = null, right = null};
+        var node1 = new TreeNode {val = 1, left = node21, right = node22};
 // case 2
-        var node2_21 = new TreeNode { val = 2, left = null, right = null };
+        var node2_21 = new TreeNode {val = 2, left = null, right = null};
 
-        var node2_11 = new TreeNode { val = 1, left = node2_21, right = null };
+        var node2_11 = new TreeNode {val = 1, left = node2_21, right = null};
 
 // case 3
-        var node3_31 = new TreeNode { val = 3, left = null, right = null };
-        var node3_21 = new TreeNode { val = 2, left = null, right = node3_31 };
-        var node3_11 = new TreeNode { val = 1, left = null, right = node3_21 };
+        var node3_31 = new TreeNode {val = 3, left = null, right = null};
+        var node3_21 = new TreeNode {val = 2, left = null, right = node3_31};
+        var node3_11 = new TreeNode {val = 1, left = null, right = node3_21};
         Console.WriteLine($"is it balanced? {IsBalanced(node1)}");
         Console.WriteLine($"is it balanced? {IsBalanced(node2_11)}");
         Console.WriteLine($"is it balanced? {IsBalanced(node3_11)}");
@@ -28,7 +28,7 @@ public class BalancedBinaryTree
     #region bottom up
 
 // For each node, it's the root of it's own sub-tree.
-// Thus we can tell by whether the left is balanced.
+// Thus we can tell by whether the leaf is balanced.
     bool IsBalanced(TreeNode root)
     {
         if (root == null)

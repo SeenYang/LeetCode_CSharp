@@ -4,7 +4,7 @@ public class PerfectSquares
 {
     public void Test()
     {
-        var input = 12;
+        var input = 4;
         Console.WriteLine($"Num Squares is {NumSquares(input)}.");
     }
 
@@ -12,8 +12,10 @@ public class PerfectSquares
 
     public int NumSquares(int n)
     {
+        if (n == 1) return 1;
+        
         // Get a list of squares of number that i^2 <= n
-        for (var i = 1; i < Math.Sqrt(n); i++)
+        for (var i = 1; i <= Math.Sqrt(n); i++)
         {
             _squares.Add(i * i);
         }
@@ -26,13 +28,13 @@ public class PerfectSquares
 
         #region Greedy Enumeration
 
-        var count = 1;
+        var count = 0;
         while (count <= n)
         {
             if (IsDevidedBy(n, ++count))
                 return count;
         }
-
+        
         return count;
 
         #endregion

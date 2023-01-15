@@ -27,6 +27,15 @@ public class SubsetsII
         return _res;
     }
 
+    /// <summary>
+    /// Core idea of dp solution is:
+    /// 1. Moving forward;
+    /// 2. Looking for potential solutions;
+    /// 3. Moving backward;
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="currentSubSet"></param>
+    /// <param name="currentStart"></param>
     private void Helper(int[] nums, List<int> currentSubSet, int currentStart)
     {
         // Add current sub set;
@@ -39,6 +48,7 @@ public class SubsetsII
                 continue;
 
             currentSubSet.Add(nums[i]);
+            
             // Iterate to next number combination from current index.
             Helper(nums, currentSubSet, i + 1);
 

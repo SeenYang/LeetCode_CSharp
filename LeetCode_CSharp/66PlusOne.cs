@@ -32,6 +32,7 @@ public class PlusOne {
                     break;
             }
 
+            // For cases that all 9s, we need to add extra 1 at the end.
             if (nums[^1] == 0)
                 // need to add extra 1 to the first element.
                 nums = nums.Concat(new[] { 1 }).ToArray();
