@@ -18,7 +18,7 @@ public class UniquePathsII
     }
 
     public int UniquePathsWithObstacles(int[][] obstacleGrid)
-    {
+    {   
         var m = obstacleGrid.Length;
         var n = obstacleGrid[0].Length;
         memo = new int?[m, n];

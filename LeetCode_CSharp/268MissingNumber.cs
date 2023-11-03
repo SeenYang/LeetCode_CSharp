@@ -10,8 +10,7 @@ public class MissingNumberC
 
     public int MissingNumber(int[] nums)
     {
-        var size = nums.Length + 1;
-        var resultArr = Enumerable.Repeat<bool>(false, nums.Length + 1).ToArray();
+        var resultArr = Enumerable.Repeat(false, nums.Length + 1).ToArray();
         foreach (var num in nums)
         {
             resultArr[num] = true;

@@ -1,5 +1,4 @@
 ﻿using LeetCode.CSharp;
 
-// var run = new LargestOddNumberInString();
-var run = new MergeTwoSortedLists();
+var run = new NumberOfGoodLeaf();
 run.Test();

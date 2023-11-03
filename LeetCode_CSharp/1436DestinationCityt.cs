@@ -34,7 +34,7 @@ public class DestinationCity {
         return citylist.Where(city => !hashmap.TryGetValue(city, out _)).FirstOrDefault() ?? "";
     }
 
-    void test()
+    public void Test()
     {
         IList<IList<string>> input = new List<IList<string>>
         {

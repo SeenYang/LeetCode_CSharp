@@ -6,28 +6,28 @@ public class CombinationSumII
 {
     public void Test()
     {
-        var input = new[] {10, 1, 2, 7, 6, 1, 5};
+        var input = new[] { 10, 1, 2, 7, 6, 1, 5 };
         var res = CombinationSum2(input, 8);
         foreach (var set in res)
             Console.WriteLine($"[{string.Join(",", set)}]");
     }
 
-    private readonly IList<IList<int>> _res = new List<IList<int>>();
-
     public IEnumerable<IEnumerable<int>> CombinationSum2(int[] candidates, int target)
     {
+        IList<IList<int>> res = new List<IList<int>>();
         candidates = candidates.Where(c => c <= target).OrderBy(c => c).ToArray();
-        CombinationHelper(candidates, new List<int>(), 0, target);
-        return _res;
+        CombinationHelper(candidates, new List<int>(), 0, target, res);
+        return res;
     }
 
-    private void CombinationHelper(int[] candidates, List<int> currentSet, int currentIndex, int remain)
+    private void CombinationHelper(int[] candidates, List<int> currentSet, int currentIndex, int remain,
+        IList<IList<int>> res)
     {
         Console.WriteLine($"Current remain(target) is {remain}, CurrentSet is {string.Join(",", currentSet)}.");
 
         if (remain == 0)
         {
-            _res.Add(new List<int>(currentSet));
+            res.Add(new List<int>(currentSet));
             return;
         }
 
@@ -41,7 +41,7 @@ public class CombinationSumII
                 return;
 
             currentSet.Add(candidates[i]);
-            CombinationHelper(candidates, currentSet, i + 1, remain - candidates[i]);
+            CombinationHelper(candidates, currentSet, i + 1, remain - candidates[i], res);
             // Reset state.
             currentSet.RemoveAt(currentSet.Count - 1);
         }
